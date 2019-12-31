@@ -1,30 +1,30 @@
 if (!Object.is /*|| true*/) {
-	Object.is = function ObjectIs(x,y) {
-		var xNegZero = isItNegZero(x);
-		var yNegZero = isItNegZero(y);
+  Object.is = function ObjectIs(x,y) {
+    var xNegZero = isItNegZero(x);
+    var yNegZero = isItNegZero(y);
 
-		if (xNegZero || yNegZero) {
-			return xNegZero && yNegZero;
-		}
-		else if (isItNaN(x) && isItNaN(y)) {
-			return true;
-		}
-		else if (x === y) {
-			return true;
-		}
+    if (xNegZero || yNegZero) {
+      return xNegZero && yNegZero;
+    }
+    else if (isItNaN(x) && isItNaN(y)) {
+      return true;
+    }
+    else if (x === y) {
+      return true;
+    }
 
-		return false;
+    return false;
 
-		// **********
+    // **********
 
-		function isItNegZero(x) {
-			return x === 0 && (1 / x) === -Infinity;
-		}
+    function isItNegZero(x) {
+      return x === 0 && (1 / x) === -Infinity;
+    }
 
-		function isItNaN(x) {
-			return x !== x;
-		}
-	};
+    function isItNaN(x) {
+      return x !== x;
+    }
+  };
 }
 
 
