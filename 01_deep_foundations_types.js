@@ -3,7 +3,7 @@ Object.is = (x ,y) => {
   let result = x === y;
   if (typeof x === 'number' && typeof y === 'number')
     result = x === 0 ? (1/y === 1/x) : Math.sign(x) === Math.sign(y);
-  result = Number.isNaN(x) && Number.isNaN(y) ? true : result;
+  result = Number.isNaN(x) && Number.isNaN(y) || result;
 
   return result;
 };
