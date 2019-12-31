@@ -1,8 +1,7 @@
 // TODO: define polyfill for `Object.is(..)`
 Object.is = (x ,y) => {
   let result = x === y;
-  if (typeof x === 'number' && typeof y === 'number')
-    result = x === 0 ? (1/y === 1/x) : Math.sign(x) === Math.sign(y);
+  if (x === 0) result = (1/y === 1/x);
   result = Number.isNaN(x) && Number.isNaN(y) || result;
 
   return result;
