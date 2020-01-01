@@ -5,6 +5,19 @@ function hoursAttended(x , y) {
   return false;
 }
 
+function isValidName(value) {
+  return typeof value === 'string' && !(value == 0) && String(value).length > 3;
+}
+
+// tests
+console.log(isValidName("Frank") === true);
+console.log(isValidName(false) === false);
+console.log(isValidName(null) === false);
+console.log(isValidName(undefined) === false);
+console.log(isValidName("") === false);
+console.log(isValidName("  \t\n") === false);
+console.log(isValidName("X") === false);
+
 // tests:
 console.log(hoursAttended(6,10) === true);
 console.log(hoursAttended(6,"10") === true);
